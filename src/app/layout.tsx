@@ -15,9 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'PD3 Portfolio - 8-bit Edition',
-  description: 'Personal Development 3 Portfolio - A gamified retro experience',
-  keywords: ['portfolio', 'personal development', '8-bit', 'retro', 'gaming'],
+  title: 'PD3 Portfolio',
   icons: {
     icon: '/favicon.svg',
   },
