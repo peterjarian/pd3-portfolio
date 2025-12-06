@@ -31,6 +31,7 @@ export default function Home() {
             font="retro"
             size="lg"
             onClick={handleStartGame}
+            onMouseEnter={() => play('buttonHover')}
             className="bg-white px-8 py-6 text-lg uppercase hover:bg-gray-200 md:text-xl"
           >
             Begin
