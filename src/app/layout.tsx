@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import { pressStart2P } from '@/styles/fonts';
 import { StarBackground } from '@/components/star-background';
 import '../styles/globals.css';
+import '@react-pdf-viewer/core/lib/styles/index.css';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',

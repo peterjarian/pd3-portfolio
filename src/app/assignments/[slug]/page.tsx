@@ -7,6 +7,16 @@ import { useAudioManager } from '@/lib/hooks/use-audio-manager';
 import { notFound } from 'next/navigation';
 import { allAssignments } from 'content-collections';
 import { MDXContent } from '@content-collections/mdx/react';
+import dynamic from 'next/dynamic';
+
+const PDFViewer = dynamic(() => import('@/components/pdf-viewer'), {
+  ssr: false,
+  loading: () => (
+    <div style={{ height: '750px' }} className="flex items-center justify-center text-white">
+      PDF laden...
+    </div>
+  ),
+});
 
 export default function AssignmentPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params);
@@ -81,7 +91,7 @@ export default function AssignmentPage({ params }: { params: Promise<{ slug: str
 
           <article className="prose prose-invert prose-sm max-w-none">
             <div className={`${fontClass} space-y-6 text-xs leading-relaxed text-white md:text-sm`}>
-              <MDXContent code={assignment.mdx} />
+              <MDXContent code={assignment.mdx} components={{ PDFViewer }} />
             </div>
           </article>
         </div>
